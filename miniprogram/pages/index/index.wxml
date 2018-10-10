@@ -1,0 +1,33 @@
+<!--index.wxml-->
+
+<!-- <view class="uploader">
+    <navigator url="../records/record" open-type="navigate" class="uploader-text">
+      <text>打卡记录</text>
+    </navigator>
+  </view> -->
+
+<view class="uploader">
+  <navigator url="../calendar/calendar" open-type="navigate" class="uploader-text">
+    <text>打卡日历</text>
+  </navigator>
+</view>
+
+<view class="container">
+
+  <view class='signOutView' wx:if="{{hasUserInfo == 0}}">
+    <button hover-class="btnHover" open-type="getUserInfo" bindgetuserinfo="onGetUserInfo"  class='btn' type="primary" style='background-image: url(./user-unlogin.png) ;background-repeat:no-repeat;background-size:cover' >
+
+    </button>
+  </view>
+
+  <view class="userinfo-avatar" bindtap="signOut" hover-class="userinfo-avatar-hover" wx:if="{{hasUserInfo == 1}}" style='background-image: url(./user-unlogin.png) ;background-repeat:no-repeat;background-size:cover'>
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+
+  <!-- <view class='signOutView' wx:if="{{hasUserInfo == 1}}">
+    
+      <button bindtap="signOut" hover-class="btnHover" style="background-image: url({{userInfo.avatarUrl }})" type='primary' class='btn'>
+     </button>
+    </view> -->
+
+</view>

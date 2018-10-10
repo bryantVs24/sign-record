@@ -1,0 +1,5 @@
+<!--pages/records/record.wxml-->
+
+<view wx:for="{{records}}" wx:key="unique" class="container log-list">
+  <text class="log-item">{{item.signInDay}} {{item.signInTime}} </text>
+</view>

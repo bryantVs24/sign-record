@@ -1,0 +1,8 @@
+<!--index.wxml-->
+<view class="container">
+
+  <view class='signOutView'>
+    <button hover-class="btnHover" open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" type='primary' class='btn'><text></text></button>
+  </view>
+
+</view>

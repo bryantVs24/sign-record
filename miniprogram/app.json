@@ -1,0 +1,16 @@
+{
+  "cloud": true,
+  "pages": [
+    "pages/index/index",
+    "pages/records/record",
+    "pages/signOut/signOut",
+    "pages/calendar/calendar"
+  ],
+  "window": {
+    "backgroundColor": "#FFFFFF",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarTitleText": "打卡",
+    "navigationBarTextStyle": "black"
+  }
+}

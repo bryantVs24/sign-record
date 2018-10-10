@@ -1,0 +1,72 @@
+span {
+  width: 100rpx;
+  margin: 40rpx 0rpx 20rpx 0rpx;
+  display: inline-block;
+  text-align: center;
+  vertical-align:top;
+}
+.row{
+  height: 30rpx;
+  
+}
+
+text{
+  display: block
+}
+
+.container{
+  text-align: center ; background-color: whitesmoke;box-shadow: 10px 10px 30px #888888;
+}
+.head{
+  border: 1rpx solid beige; margin: 3rpx; background-color: lightgray
+}
+
+.dayText{
+  font-size: 32rpx;
+}
+
+.timeText{
+  font-size: 22rpx;
+  color: red
+}
+
+.greyDay{
+  color: grey;
+}
+.redDay{
+  color: red;
+}
+
+.avaTimeView{
+  margin-top: 100rpx;
+  text-align: center;
+  color: red
+}
+
+.avaEnough{
+  color: green
+}
+
+.mask{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    z-index: 9000;
+    opacity: 0.7;
+}
+
+.modalDlg{
+    width: 580rpx;
+    height: 330rpx;
+    position: fixed;
+    top: 50%;
+    left: 0;
+    z-index: 9999;
+    margin: -370rpx 85rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

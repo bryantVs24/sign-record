@@ -1,0 +1,62 @@
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modalDlg" wx:if="{{showModal}}">
+  <picker-view  style="width: 100%; height: 100%; z-index: 1000;background-color:white;opacity:0.9;" value="{{value}}" bindchange="bindChange">
+    <picker-view-column>
+      <view wx:for="{{hours}}" style="line-height: 50rpx;text-align:center">{{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{mins}}" style="line-height: 50rpx;text-align:center">{{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{seconds}}" style="line-height: 50rpx;text-align:center">{{item}}</view>
+    </picker-view-column>
+  </picker-view>
+
+    <div style="margin-top:10rpx">
+     <button bindtap="toClearTime" style='display:inline-block;width:150rpx;height:75rpx;font-size:33rpx;margin-right:20rpx;opacity:0.7;background-color:white'>置 空</button>
+      <button bindtap="cancelUpdate" style='display:inline-block;width:150rpx;height:75rpx;font-size:33rpx;margin-right:20rpx;opacity:0.7;background-color:white'>取 消</button>
+      <button bindtap="toUpdate" style='display:inline-block;width:150rpx;height:75rpx;font-size:33rpx;opacity:0.7;background-color:white'>确 认</button>
+    </div>
+  
+</view>
+
+<view>
+  <div class="container">
+    <div class="head">
+      <span style="color:red">日</span>
+      <span>一</span>
+      <span>二</span>
+      <span>三</span>
+      <span>四</span>
+      <span>五</span>
+      <span style="color:red">六</span>
+    </div>
+    <div class="body" wx:for="{{signData}}">
+      <div wx:for="{{item}}" class="row" wx:for-index="index">
+        <span wx:if="{{item.m == month}}" bindtap="showTime" data-day="{{item.d}}" data-time="{{item.time}}">
+          <text class='dayText redDay' wx:if="{{index ==0 || index == 6}}">{{item.d}} </text>
+          <text class='dayText' wx:if="{{index !=0 && index != 6}}">{{item.d}} </text>
+
+          <text wx:if="{{item.enough}}" class='timeText avaEnough'> {{item.time}}</text>
+          <text wx:if="{{!item.enough}}" class='timeText'> {{item.time}}</text>
+        </span>
+        <span wx:else>
+          <text class='dayText greyDay'>{{item.d}} </text>
+
+          <text class='timeText'> {{item.time}}</text>
+        </span>
+      </div>
+
+    </div>
+  </div>
+</view>
+
+<view class="avaTimeView " wx:if="{{!enough}}">
+  <text>平均下班时间： {{avaTime}}</text>
+  <text>继续加班吧，骚年</text>
+</view>
+
+<view class="avaTimeView avaEnough" wx:if="{{enough}}">
+  <text>平均下班时间： {{avaTime}}</text>
+  <text>本月加班时长已充足，可以适当休息下啦</text>
+</view>

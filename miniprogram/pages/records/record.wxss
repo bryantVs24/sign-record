@@ -1,0 +1,4 @@
+/* pages/records/record.wxss */
+.log-list{
+  margin-top: 100rpx
+}
